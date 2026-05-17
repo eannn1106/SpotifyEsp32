@@ -133,6 +133,8 @@ class Spotify {
   /// @return true if authentication is complete and a valid access token is present.
   bool is_auth();
 
+  String get_auth_url { return auth_url; }
+
   #ifndef DISABLE_LIBRARY
     /// @brief Save one or more items (tracks, albums, episodes, shows, audiobooks, artists, users, playlists) to the current user’s library.
     /// @param size Number of URIs in the uris array.
@@ -606,6 +608,8 @@ class Spotify {
 
     /// @brief Authorization code received during OAuth flow.
     char _auth_code[1024] = "";
+
+    String auth_url = "";
 
     /// @brief Client ID provided by user.
     char _client_id[100] = "";
