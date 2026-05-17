@@ -98,6 +98,7 @@ void Spotify::begin(){
 
     char url[1024];
     snprintf(url, sizeof(url),"https://accounts.spotify.com/authorize" "?client_id=%s" "&response_type=code" "&redirect_uri=%s" "&scope=%s" "&state=%s", _client_id, encoded_redirect_uri, encoded_scopes, _random_state);
+    auth_url = String (url);
 
     Serial.println("Open this URL in your browser to authorize:");
     Serial.println(url);
